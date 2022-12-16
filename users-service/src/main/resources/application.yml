@@ -1,0 +1,20 @@
+app:
+  authentication:
+    keycloak:
+      realm: digitalhouse
+      server-url: http://localhost:8082
+      client-id: admin-client
+      client-secret: JFIX3pmPS2ig6f9nm389idTYEC5hp7mC
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          users-service-registration:
+            provider: users-service-provider
+            client-id: users-service
+            client-secret: rsQTXN2amh2g2qfYrhgEZ0oduxfjHmaH
+            authorization-grant-type: client_credentials
+        provider:
+          users-service-provider:
+            issuer-uri: http://localhost:8082/realms/digitalhouse
